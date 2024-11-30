@@ -1,14 +1,15 @@
 {
-  "name": "com.yourcompany.yourpackage",
+  "name": "com.iwacchilab.usharpbench",
   "version": "0.0.1",
-  "displayName": "Your Package Name",
-  "description": "A brief description of what your package does.",
-  "url": "https://github.com/iwacchik/VRCPackageTemplate.git",
+  "displayName": "IwacchiLab - UdonSharp Benchmarks",
+  "description": "This package provides tools to benchmark and test the performance of UdonSharp scripts in VRChat.",
+  "url": "https://github.com/iwacchik/UdonSharpBenchmarks.git",
   "unity": "2022.3",
   "author": {
-    "name": "Your Name",
-    "email": "your-email@example.com"
+    "name": "iwacchi",
+    "email": "iwacchi.tensai@gmail.com"
   },
   "vpmDependencies": {
+    "com.vrchat.worlds": "^3.7"
   }
 }
