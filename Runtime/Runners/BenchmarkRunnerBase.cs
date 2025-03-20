@@ -39,12 +39,19 @@ namespace IwacchiLab.Tester.UdonsharpBenchmarks
         public void _InitializeEvent()
         {
             Initialize();
-            SendCustomEventDelayedFrames(_taskName, 0);
+            SendCustomEventDelayedFrames(nameof(_RunTask), 0);
         }
 
         protected virtual void Initialize()
         {
         }
+
+        public void _RunTask()
+        {
+            SendCustomEvent(_taskName);
+            OnComplete();
+        }
+
 
         protected void OnComplete()
         {

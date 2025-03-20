@@ -49,6 +49,20 @@ namespace IwacchiLab.Tester.UdonsharpBenchmarks
 
         private void Start()
         {
+            Initialize();
+        }
+
+        private void LateUpdate()
+        {
+            if (!string.IsNullOrEmpty(_runningTask) && Time.frameCount - _runFrame >= 2)
+            {
+                // ここに到達した時点でFailed
+                FailTask();
+            }
+        }
+
+        private void Initialize()
+        {
             if (string.IsNullOrEmpty(SettingsString))
             {
                 return;
@@ -68,17 +82,8 @@ namespace IwacchiLab.Tester.UdonsharpBenchmarks
             VRCJson.TryDeserializeFromJson(SettingsString, out var data);
             _benchmarkData = data.DataDictionary["Settings"].DataList;
         }
-
-        private void LateUpdate()
-        {
-            if (!string.IsNullOrEmpty(_runningTask) && Time.frameCount - _runFrame >= 2)
-            {
-                // ここに到達した時点でFailed
-                FailTask();
-            }
-        }
-
-        public override void Interact()
+        
+        public void RunBenchmark()
         {
             if (_isExecuting || _benchmarkData == null)
             {
@@ -197,9 +202,6 @@ namespace IwacchiLab.Tester.UdonsharpBenchmarks
                 sb.AppendLine(
                     OutputResult(key.String, result)
                     );
-                
-                // 中央値を計算する
-                Debug.Log( $"中央値:{CalculateMedian(result["ElapsedList"].DataList)}" );
             }
 
             Debug.Log(sb.ToString());
@@ -219,10 +221,9 @@ namespace IwacchiLab.Tester.UdonsharpBenchmarks
             var aveText = successCount != 0 ? $"{result["ElapsedTotal"].Double / runCount:F3}ms" : "===";
             var minText = successCount != 0 ? $"{result["ElapsedMin"].Double:F3}ms" : "===";
             var maxText = successCount != 0 ? $"{result["ElapsedMax"].Double:F3}ms" : "===";
-
-
+            var median = successCount != 0 ? $"{CalculateMedian(result["ElapsedList"].DataList)}ms" : "===";
             
-            return $"{name} {countText} Ave:{aveText} Min:{minText} Max:{maxText}";
+            return $"{name} {countText} Median:{median} Min:{minText} Max:{maxText}";
         }
         
         public double CalculateMedian(DataList list)
@@ -242,8 +243,6 @@ namespace IwacchiLab.Tester.UdonsharpBenchmarks
                 return (list[middleIndex - 1].Double + list[middleIndex].Double) / 2f;
             }
         }
-
-
     }
 
 
