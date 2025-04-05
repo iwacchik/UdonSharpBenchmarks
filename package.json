@@ -1,6 +1,6 @@
 {
   "name": "com.iwacchilab.usharpbench",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "displayName": "IwacchiLab - UdonSharp Benchmarks",
   "description": "This package provides tools to benchmark and test the performance of UdonSharp scripts in VRChat.",
   "url": "https://github.com/iwacchik/UdonSharpBenchmarks.git",
