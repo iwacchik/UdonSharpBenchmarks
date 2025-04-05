@@ -44,7 +44,7 @@ namespace IwacchiLab.Tester.UdonsharpBenchmarks
         private DataDictionary _results = new DataDictionary();
         
         // ログ表示
-        [SerializeField] private TextMeshProUGUI _realtimeLog;
+        [SerializeField] private TMP_Text _realtimeLog;
         [SerializeField] private TMP_InputField _resultsText;
 
         private void Start()

@@ -30,10 +30,7 @@ namespace IwacchiLab.Tester.UdonsharpBenchmarks
                     test++;
                 }
             }
-
             _stopwatch.Stop();
-
-            OnComplete();
         }
 
         public void NullCheck_Inequality()
@@ -47,10 +44,7 @@ namespace IwacchiLab.Tester.UdonsharpBenchmarks
                     test++;
                 }
             }
-
             _stopwatch.Stop();
-
-            OnComplete();
         }
 
         public void NullCheck_Equality_Continue()
@@ -66,10 +60,7 @@ namespace IwacchiLab.Tester.UdonsharpBenchmarks
 
                 test++;
             }
-
             _stopwatch.Stop();
-
-            OnComplete();
         }
 
         public void UseIsValid()
@@ -83,10 +74,7 @@ namespace IwacchiLab.Tester.UdonsharpBenchmarks
                     test++;
                 }
             }
-
             _stopwatch.Stop();
-
-            OnComplete();
         }
 
         public void UseIsValid_Negative()
@@ -103,10 +91,7 @@ namespace IwacchiLab.Tester.UdonsharpBenchmarks
                     test++;
                 }
             }
-
             _stopwatch.Stop();
-
-            OnComplete();
         }
 
         public void UseIsValid_Negative_UseContinue()
@@ -122,10 +107,7 @@ namespace IwacchiLab.Tester.UdonsharpBenchmarks
 
                 test++;
             }
-
             _stopwatch.Stop();
-
-            OnComplete();
         }
 
         public void PlayerNullCheck()
@@ -140,10 +122,7 @@ namespace IwacchiLab.Tester.UdonsharpBenchmarks
                     test++;
                 }
             }
-
             _stopwatch.Stop();
-
-            OnComplete();
         }
 
         public void PlayerUtilitiesIsValid()
@@ -158,10 +137,7 @@ namespace IwacchiLab.Tester.UdonsharpBenchmarks
                     test++;
                 }
             }
-
             _stopwatch.Stop();
-
-            OnComplete();
         }
 
         public void PlayerIsValid()
@@ -176,10 +152,7 @@ namespace IwacchiLab.Tester.UdonsharpBenchmarks
                     test++;
                 }
             }
-
             _stopwatch.Stop();
-
-            OnComplete();
         }
 
         public void GameObjectNullCheck()
@@ -192,10 +165,7 @@ namespace IwacchiLab.Tester.UdonsharpBenchmarks
                 {
                 }
             }
-
             _stopwatch.Stop();
-
-            OnComplete();
         }
 
         /// <summary>
@@ -211,10 +181,7 @@ namespace IwacchiLab.Tester.UdonsharpBenchmarks
                 {
                 }
             }
-
             _stopwatch.Stop();
-
-            OnComplete();
         }
 
         public void GameObjectIsValid()
@@ -227,10 +194,7 @@ namespace IwacchiLab.Tester.UdonsharpBenchmarks
                 {
                 }
             }
-
             _stopwatch.Stop();
-
-            OnComplete();
         }
 
         /// <summary>
@@ -247,10 +211,7 @@ namespace IwacchiLab.Tester.UdonsharpBenchmarks
                 {
                 }
             }
-
             _stopwatch.Stop();
-
-            OnComplete();
         }
 
         /// <summary>
@@ -267,10 +228,7 @@ namespace IwacchiLab.Tester.UdonsharpBenchmarks
                 {
                 }
             }
-
             _stopwatch.Stop();
-
-            OnComplete();
         }
 
         //
@@ -282,8 +240,6 @@ namespace IwacchiLab.Tester.UdonsharpBenchmarks
         //     for (int i = 0; i < _iterations; i++)
         //         if (Utilities.IsValid(go) == true) { }
         //     _stopwatch.Stop();
-        //     
-        //     OnComplete();
         // }
         //
         // public void UseIsValid_Inequality()
@@ -294,8 +250,6 @@ namespace IwacchiLab.Tester.UdonsharpBenchmarks
         //     for (int i = 0; i < _iterations; i++)
         //         if (Utilities.IsValid(go) == false) { }
         //     _stopwatch.Stop();
-        //     
-        //     OnComplete();
         // }
     }
 }
