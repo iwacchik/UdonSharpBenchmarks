@@ -22,7 +22,7 @@ namespace IwacchiLab.Tester.UdonsharpBenchmarks
     /// Example behaviour that has a custom inspector
     /// </summary>
     [UdonBehaviourSyncMode(BehaviourSyncMode.None)]
-    public class BenchmarkTester : UdonSharpBehaviour
+    public class UdonSpeedBenchmark : UdonSharpBehaviour
     {
         [HideInInspector]
         public string SettingsString;
@@ -248,7 +248,7 @@ namespace IwacchiLab.Tester.UdonsharpBenchmarks
 
     // Editor scripts must be wrapped in a UNITY_EDITOR check to prevent issues while uploading worlds. The !COMPILER_UDONSHARP check prevents UdonSharp from throwing errors about unsupported code here.
 #if !COMPILER_UDONSHARP && UNITY_EDITOR
-    [CustomEditor(typeof(BenchmarkTester))]
+    [CustomEditor(typeof(UdonSpeedBenchmark))]
     public class BenchmarkTesterEditor : Editor
     {
         [Serializable]
@@ -290,7 +290,7 @@ namespace IwacchiLab.Tester.UdonsharpBenchmarks
 
         private void InitializeReorderableList()
         {
-            var inspectorBehaviour = (BenchmarkTester)target;
+            var inspectorBehaviour = (UdonSpeedBenchmark)target;
 
             // JSON から設定を復元
             if (!string.IsNullOrEmpty(inspectorBehaviour.SettingsString))
@@ -409,7 +409,7 @@ namespace IwacchiLab.Tester.UdonsharpBenchmarks
 
         private void OnReorderableListChanged()
         {
-            var inspectorBehaviour = (BenchmarkTester)target;
+            var inspectorBehaviour = (UdonSpeedBenchmark)target;
 
             // JSON にシリアライズして保存
             var wrapper = new ListWrapper { Settings = _settings };

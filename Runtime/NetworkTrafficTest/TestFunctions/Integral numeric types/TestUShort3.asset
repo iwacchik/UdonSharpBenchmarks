@@ -62,7 +62,7 @@ MonoBehaviour:
       Data: 3|System.RuntimeType, mscorlib
     - Name: 
       Entry: 1
-      Data: IwacchiLab.Benchmarks.Network.NetworkTrafficBenchmark, Assembly-CSharp
+      Data: IwacchiLab.Benchmarks.Network.NetworkTrafficBenchmark, com.iwacchilab.usharpbench
     - Name: 
       Entry: 8
       Data: 

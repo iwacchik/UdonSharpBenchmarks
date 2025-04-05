@@ -416,7 +416,7 @@ MonoBehaviour:
       Data: 26|System.RuntimeType, mscorlib
     - Name: 
       Entry: 1
-      Data: IwacchiLab.Benchmarks.Network.TrafficTestFunction[], Assembly-CSharp
+      Data: IwacchiLab.Benchmarks.Network.TrafficTestFunction[], com.iwacchilab.usharpbench
     - Name: 
       Entry: 8
       Data: 
